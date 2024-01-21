@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Exceptions\NovaPasta\**" />
+    <Compile Remove="Gateways\NovaPasta\**" />
+    <EmbeddedResource Remove="Exceptions\NovaPasta\**" />
+    <EmbeddedResource Remove="Gateways\NovaPasta\**" />
+    <None Remove="Exceptions\NovaPasta\**" />
+    <None Remove="Gateways\NovaPasta\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ValueObjects\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
+</Project>
