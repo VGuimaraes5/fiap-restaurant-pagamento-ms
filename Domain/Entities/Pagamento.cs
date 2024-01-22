@@ -20,7 +20,6 @@ namespace Domain.Entities
         public TipoPagamento TipoPagamento { get; private set; }
         public StatusPagamento Status { get; private set; }
         public Guid PedidoId { get; private set; }
-        public virtual Pedido Pedido { get; set; }
 
         public void SetStatus(short status)
         {

@@ -21,10 +21,6 @@ namespace Infrastructure.DataProviders.EntityConfigurations
                 .HasColumnType("int")
                 .IsRequired(true)
                 .HasConversion<int>();
-
-            builder.HasOne(p => p.Pedido)
-                .WithOne(p => p.Pagamento)
-                .HasForeignKey<Pagamento>(p => p.PedidoId);
         }
     }
 }

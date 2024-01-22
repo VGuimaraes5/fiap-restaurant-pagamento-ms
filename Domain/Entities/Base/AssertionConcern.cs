@@ -130,14 +130,6 @@ namespace Domain.Entities.Base
             }
         }
 
-        public static void AssertCpfIsValid(string cpf, string message)
-        {
-            if (!CpfValidation.ValidCpf(cpf))
-            {
-                throw new InvalidOperationException(message);
-            }
-        }
-
         public static void AssertArgumentMinValue(decimal value, decimal minimum, string message)
         {
             if (value < minimum)
