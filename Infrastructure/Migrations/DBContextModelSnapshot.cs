@@ -31,8 +31,8 @@ namespace Infrastructure.Migrations
                     b.Property<DateTime>("DataCriacao")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<Guid>("PedidoId")
-                        .HasColumnType("char(36)");
+                    b.Property<string>("PedidoId")
+                        .HasColumnType("longtext");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
