@@ -15,12 +15,12 @@ namespace API.Controllers
             _putUseCase = putUseCase;
         }
 
-        [HttpPut("AtualizaPagamento/{Id}")]
-        public async Task<IActionResult> AtualizaPagamento([FromRoute] Guid Id, [FromBodyAttribute] PagamentoPutRequest request)
+        [HttpPut("AtualizaPagamento/{PedidoId}")]
+        public async Task<IActionResult> AtualizaPagamento([FromRoute] string PedidoId, [FromBodyAttribute] PagamentoPutRequest request)
         {
             try
             {
-                request.Id = Id;
+                request.PedidoId = PedidoId;
                 await _putUseCase.ExecuteAsync(request);
                 return Ok();
             }

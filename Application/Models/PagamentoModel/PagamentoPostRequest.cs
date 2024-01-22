@@ -1,4 +1,3 @@
-using System;
 using Domain.Enums;
 using Newtonsoft.Json;
 
@@ -10,6 +9,6 @@ namespace Application.Models.PagamentoModel
         public TipoPagamento Tipo { get; set; }
 
         [JsonProperty("pedidoId")]
-        public Guid PedidoId { get; set; }
+        public string PedidoId { get; set; }
     }
 }

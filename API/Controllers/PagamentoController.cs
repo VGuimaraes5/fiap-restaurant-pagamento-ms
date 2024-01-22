@@ -20,7 +20,7 @@ namespace API.Controllers
         }
 
         [HttpGet("StatusPagamento/{IdPedido}")]
-        public async Task<IActionResult> Status([FromRoute] Guid IdPedido)
+        public async Task<IActionResult> Status([FromRoute] string IdPedido)
         {
             try
             {

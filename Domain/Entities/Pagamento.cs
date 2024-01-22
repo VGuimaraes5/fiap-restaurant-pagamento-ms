@@ -8,7 +8,7 @@ namespace Domain.Entities
     {
         private Pagamento() { }
 
-        public Pagamento(TipoPagamento tipoPagamento, Guid pedidoId, StatusPagamento? status = null, Guid? id = null)
+        public Pagamento(TipoPagamento tipoPagamento, string pedidoId, StatusPagamento? status = null, Guid? id = null)
         {
             Id = id == null ? Guid.NewGuid() : (Guid)id;
             Status = status == null ? StatusPagamento.Pendente : (StatusPagamento)status;
@@ -19,7 +19,7 @@ namespace Domain.Entities
 
         public TipoPagamento TipoPagamento { get; private set; }
         public StatusPagamento Status { get; private set; }
-        public Guid PedidoId { get; private set; }
+        public string PedidoId { get; private set; }
 
         public void SetStatus(short status)
         {

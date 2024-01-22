@@ -4,7 +4,7 @@ namespace Application.Models.PagamentoModel
 {
     public class PagamentoPutRequest
     {
-        public Guid Id { get; set; }
+        public string PedidoId { get; set; }
         public short Status { get; set; }
     }
 }

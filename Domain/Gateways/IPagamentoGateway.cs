@@ -6,6 +6,6 @@ namespace Domain.Gateways.External
 {
     public interface IPagamentoGateway : IRepositoryGateway<Pagamento, Guid>
     {
-        Task<Pagamento> GetByPedidoAsync(Guid pedidoId);
+        Task<Pagamento> GetByPedidoAsync(string pedidoId);
     }
 }
