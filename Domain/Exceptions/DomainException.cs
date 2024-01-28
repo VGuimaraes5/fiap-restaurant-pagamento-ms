@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Domain.Exceptions
 {
+    [ExcludeFromCodeCoverage]
     public class DomainException : Exception
     {
         /// <summary>
