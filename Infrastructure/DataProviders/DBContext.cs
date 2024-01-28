@@ -19,6 +19,4 @@ namespace Infrastructure.DataProviders
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(DbContext).Assembly);
         }
     }
-
-
 }

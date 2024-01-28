@@ -4,10 +4,6 @@ using Application.UseCases;
 using Domain.Enums;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
-using System;
-using System.Threading.Tasks;
-using Xunit;
-
 
 namespace Test.API.Controllers
 {

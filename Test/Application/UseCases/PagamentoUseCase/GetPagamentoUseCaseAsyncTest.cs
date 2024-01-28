@@ -1,15 +1,9 @@
 ﻿using Application.Models.PagamentoModel;
 using Application.UseCases.PagamentoUseCase;
 using Domain.Entities;
-using Domain.Entities.Base;
 using Domain.Enums;
 using Domain.Gateways.External;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Xunit;
-
 
 namespace Test.Application.UseCases.PagamentoUseCase
 {
@@ -40,7 +34,7 @@ namespace Test.Application.UseCases.PagamentoUseCase
         {
             // Arrange
             var mockPagamentoGateway = new Mock<IPagamentoGateway>();
-            mockPagamentoGateway.Setup(x => x.GetByPedidoAsync(It.IsAny<string>())).ReturnsAsync((Domain.Entities.Pagamento)null);
+            mockPagamentoGateway.Setup(x => x.GetByPedidoAsync(It.IsAny<string>())).ReturnsAsync(value: null);
 
             var useCase = new GetPagamentoUseCaseAsync(mockPagamentoGateway.Object);
             var request = new PagamentoGetRequest { IdPedido = "pedido01" };
