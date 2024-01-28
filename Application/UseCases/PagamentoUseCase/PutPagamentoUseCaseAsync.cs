@@ -16,7 +16,7 @@ namespace Application.UseCases.PagamentoUseCase
 
         public async Task ExecuteAsync(PagamentoPutRequest request)
         {
-            var pagamento = await _pagamentoGateway.GetAsync(request.Id);
+            var pagamento = await _pagamentoGateway.GetByPedidoAsync(request.PedidoId);
             if (pagamento == null)
                 throw new KeyNotFoundException("Pagamento não encontrado");
             if (pagamento.Status != Domain.Enums.StatusPagamento.Pendente)

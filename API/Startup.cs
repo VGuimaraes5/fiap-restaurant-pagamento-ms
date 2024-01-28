@@ -1,9 +1,4 @@
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Authorization;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Infrastructure.Configurations;
 using Infrastructure.Extensions;
 using Newtonsoft.Json;
@@ -30,8 +25,6 @@ namespace API
             this.AppConfigurations = services.RegisterConfigurations(Configuration);
 
             RegisterServiceExtensions.RegisterService(services);
-
-            services.RegisterAutoMapper();
 
             services.AddRazorPages();
             services.AddSwaggerGen();

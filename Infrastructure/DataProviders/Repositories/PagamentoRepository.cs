@@ -16,7 +16,7 @@ namespace Infrastructure.DataProviders.Repositories.External
             _pagamentoDbSet = dbContext.Set<Pagamento>();
         }
 
-        public async Task<Pagamento> GetByPedidoAsync(Guid pedidoId)
+        public async Task<Pagamento> GetByPedidoAsync(string pedidoId)
         {
             var result = await _pagamentoDbSet
                 .AsNoTracking()
