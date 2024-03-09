@@ -4,6 +4,7 @@ using Infrastructure.Extensions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json.Converters;
+using Application.Consumers;
 
 namespace API
 {
@@ -41,6 +42,10 @@ namespace API
 
             services.AddMemoryCache();
             services.AddControllers();
+
+            services.AddCors();
+
+            services.AddHostedService<PedidoCreateConsumer>();
         }
 
         private void ConfigureJsonOptionsSerializer(JsonSerializerSettings serializerSettings)
@@ -81,6 +86,11 @@ namespace API
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseCors(options => options
+                .AllowAnyOrigin()
+                .AllowAnyHeader()
+                .AllowAnyMethod());
 
             app.UseEndpoints(endpoints =>
             {

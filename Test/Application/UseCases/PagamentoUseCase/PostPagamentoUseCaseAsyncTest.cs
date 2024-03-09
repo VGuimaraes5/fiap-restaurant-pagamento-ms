@@ -1,14 +1,8 @@
 ﻿using Application.Models.PagamentoModel;
 using Application.UseCases.PagamentoUseCase;
-using Domain.Entities;
-using Domain.Entities.Base;
 using Domain.Enums;
 using Domain.Gateways.External;
 using Moq;
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using Xunit;
 
 namespace Test.Application.UseCases.PagamentoUseCase
 {
@@ -30,7 +24,7 @@ namespace Test.Application.UseCases.PagamentoUseCase
 
             // Assert
             mockPagamentoGateway.Verify(x => x.InsertAsync(It.Is<Domain.Entities.Pagamento>(p => p.TipoPagamento == TipoPagamento.Pix && p.PedidoId == "pedido01")), Times.Once);
-           
+
         }
     }
 }
