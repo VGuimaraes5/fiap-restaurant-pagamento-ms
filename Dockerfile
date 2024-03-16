@@ -1,6 +1,8 @@
 # inicio etapa de build 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 
+ARG PORT
+
 # cópia do projeto para o container
 WORKDIR /src
 COPY . .
@@ -17,5 +19,5 @@ FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
 COPY --from=build /app/publish .
 
-EXPOSE 5002
+EXPOSE $PORT
 ENTRYPOINT ["dotnet", "API.dll"]
