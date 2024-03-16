@@ -5,9 +5,11 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json.Converters;
 using Application.Consumers;
+using System.Diagnostics.CodeAnalysis;
 
 namespace API
 {
+    [ExcludeFromCodeCoverage]
     public class Startup
     {
         public Startup(IConfiguration configuration, IWebHostEnvironment environment)
