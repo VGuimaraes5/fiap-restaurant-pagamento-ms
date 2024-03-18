@@ -58,6 +58,7 @@ jobs:
     - name: Get envs
       run: |
         echo "connectionString=${{ secrets.CONNECTION_STRING }}" >> $GITHUB_ENV
+        echo "connectionStringRabbit=${{ secrets.CONNECTION_STRING_RABBIT }}" >> $GITHUB_ENV
         echo "poolId=${{ vars.POOL_ID }}" >> $GITHUB_ENV
         echo "poolClientId=${{ vars.POOL_CLIENT_ID }}" >> $GITHUB_ENV
         echo "imgTag=${{ github.sha }}" >> $GITHUB_ENV
