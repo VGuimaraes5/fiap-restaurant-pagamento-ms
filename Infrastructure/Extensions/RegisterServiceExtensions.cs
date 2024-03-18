@@ -5,6 +5,8 @@ using Domain.Gateways.External;
 using Infrastructure.DataProviders.Repositories.External;
 using Application.Models.PagamentoModel;
 using Application.UseCases.PagamentoUseCase;
+using Infrastructure.Bus;
+using Domain.Bus;
 
 namespace Infrastructure.Extensions
 {
@@ -20,12 +22,12 @@ namespace Infrastructure.Extensions
         {
             services.AddTransient<IUseCaseAsync<PagamentoPutRequest>, PutPagamentoUseCaseAsync>();
             services.AddTransient<IUseCaseAsync<PagamentoPostRequest>, PostPagamentoUseCaseAsync>();
-            services.AddTransient<IUseCaseAsync<PagamentoGetRequest, Tuple<string, Guid>>, GetPagamentoUseCaseAsync>();
         }
 
         private static void AddRepositories(IServiceCollection services)
         {
             services.AddTransient<IPagamentoGateway, PagamentoRepository>();
+            services.AddTransient<IPagamentoBus, PagamentoBus>();
         }
 
         private static void AddOthers(IServiceCollection services)

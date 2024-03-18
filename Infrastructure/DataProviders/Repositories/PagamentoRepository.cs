@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Domain.Entities;
 using Domain.Gateways.External;
 
@@ -16,7 +13,7 @@ namespace Infrastructure.DataProviders.Repositories.External
             _pagamentoDbSet = dbContext.Set<Pagamento>();
         }
 
-        public async Task<Pagamento> GetByPedidoAsync(string pedidoId)
+        public async Task<Pagamento?> GetByPedidoAsync(string pedidoId)
         {
             var result = await _pagamentoDbSet
                 .AsNoTracking()
